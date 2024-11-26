@@ -20,8 +20,8 @@ LANGUAGES = [
 
 def create_all_tasks():
     return {
-        "santacoder_fim": SantaCoderFIM,
-        "starcoder_fim": StarCoderFIM,
+        "santacoder_fim-javascript": SantaCoderFIM,
+        "starcoder_fim-javascript": StarCoderFIM,
     }
 
 

@@ -194,6 +194,17 @@ def parse_args():
         help="Path for saving the references solutions/tests",
     )
     parser.add_argument(
+        "--save_results",
+        action="store_true",
+        help="Whether to save evaluation results",
+    )
+    parser.add_argument(
+        "--save_results_path",
+        type=str,
+        default="results.json",
+        help="Path for saving evaluation results",
+    )
+    parser.add_argument(
         "--prompt",
         type=str,
         default="prompt",
@@ -391,8 +402,10 @@ def main():
                     evaluator.save_json_files(
                         generations,
                         references,
+                        None, # no evaluation results
                         save_generations_path,
                         save_references_path,
+                        None, # no evaluation results
                     )
             else:
                 results[task] = evaluator.evaluate(
